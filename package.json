@@ -1,0 +1,38 @@
+{
+  "name": "task-management",
+  "productName": "task-management",
+  "version": "1.0.0",
+  "description": "task-management description",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "yarn build && electron-forge start",
+    "package": "electron-forge package",
+    "make": "yarn build && electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\"",
+    "build": "yarn clean && tsc && yarn copy",
+    "copy": "copyfiles -u 1 src/assets/** dist && copyfiles -u 1 src/index.html dist",
+    "clean": "rimraf dist"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Seyyed Majid Razavi",
+    "email": "sm.razavi.work@gmail.comm"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "copyfiles": "^2.4.1",
+    "electron-squirrel-startup": "^1.0.0",
+    "typescript": "^5.3.2"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.1.0",
+    "@electron-forge/maker-deb": "^7.1.0",
+    "@electron-forge/maker-rpm": "^7.1.0",
+    "@electron-forge/maker-squirrel": "^7.1.0",
+    "@electron-forge/maker-zip": "^7.1.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.1.0",
+    "electron": "27.1.2",
+    "rimraf": "^5.0.5"
+  }
+}
